@@ -1,0 +1,21 @@
+Area	Description	Supplier	Code	Unit	UnitCost	DiscountedUnitCost	StockOnHand
+Extraction	MagMax Multi-samples	ThermoFisher	A25919	rxn	31530.00	30240.00	1
+Extraction	Qiagen DNA extraction kit	United Scientific	QIA/51306	rxn	17470.00	13314.40	1
+Extraction	MagMax Magnetic beads	ThermoFisher	A25562	rxn	4030.00	4058.78	1
+Extraction	Proteinase K	ThermoFisher	A25561	uL	3740.00	3085.50	1
+Extraction	Proteinase K 30.00 units/mg 25mg	Inqaba	GLS GE0990-25MG	mg	808.77	808.77	1
+Extraction	ZymoBIOMICs DNA Miniprep	Inqaba	ZR D4300	rxn	6494.04	5519.93	1
+Extraction	QIAquick Spin Columns (100)	Qiagene SA	28115 / 27115	rxn	1740.00	1660.00	1
+Extraction	Buffer AL	Qiagene SA	19075	ml	1600.00	1600.00	1
+Extraction	Collection Tubes	Qiagene SA	19201	Pack	3470.00	3470.00	1
+Plastic ware	96-Deep Well Plates	ThermoFisher	95040450	Box	3745.00	3618.45	1
+Plastic ware	96 well plates 200uL Elution plate	ThermoFisher	97002540	Box	2705.00	2615.69	1
+Plastic ware	96 well PCR plates	ThermoFisher	AB1400	Box	1630.00	1560.00	1
+Plastic ware	96-well fast plate	ThermoFisher	4346907	Box	808.00	805.60	1
+Plastic ware	MagMax Tips Combos	ThermoFisher	97002534	Box	9670.00	9336.62	1
+Plastic ware	1,5ml Eppendorf tubes	Inqaba	EP0030120086	Box	1133.71	1133.71	1
+QC	Qubit BR DS DNA Kit	ThermoFisher	Q32853	rxn	3745.00	3362.07	1
+QC	Qubit HS DNA Kit	ThermoFisher	Q32853	rxn	1622.00	1622.00	1
+RT-PCR	OpenArray Master Mix	ThermoFisher	4404846	uL	6420.00	6035.70	1
+GeneTitan	PangenomiX Array 96 format	ThermoFisher	952521	Plate	119238.00	79654.08	1
+Sequencing	NEB Blunt TA Ligase Mastermix	Inqaba	NEB M0367S	rxn	2156.29	2156.29	1

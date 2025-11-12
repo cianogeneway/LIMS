@@ -1,0 +1,68 @@
+Supplier	Company / Manufacture	Invoice Date	Serial Number	Asset Numbers	Product Description	Short Description	Area of use	Smallest single unit	Single Unit measurents for cost calculations	Major Unit Price (excl VAT)	Single Unit Price (excl VAT) 2025 - Insurance purposes (Replacement value)	Instruments that have been retired from service
+AEC Amersham	Thermo Scientific	16/09/2015	722115051612	L360O_0001	Centrifuge, Thermo Scientific SL 8, 230V 50/60 Hz. Including sealed buckets and swinging bucket rotor.	Centrifuge	Extraction Room	1	each	R28 990,20	R50 000	
+Labotec	Thermo Scientific	12/08/2015	50408450444443430	L360O_0002	Thermo ES Lab Fridge/Freezer- Thermo 263c-ACV-TSC	Fridge/Freezer	Clean Room	1	each	R34 650,00	R45 000	
+MHC (Metro Home Center)	KIC	25/11/2017	370569756689	L360O_0003	KIC 210L Chest Deep Freezer	Fridge/Freezer	Extraction Room	1	each	R1 753,51	R4 200	
+Sigma-Aldrich	Eppendorf	26/11/2015	M12265E	L360O_0004	Eppendorf(R) Research(R) Plus Pipette 10ml	Pipette	Extraction Room	1	set	R7 962,78	R15 000	
+			M27591E	L360O_0005	Eppendorf(R) Research(R) Plus Pipette 5mL	Pipette	Extraction Room					
+			M26983E	L360O_0006	Eppendorf(R) Research(R) Plus Pipette 1000uL	Pipette	Extraction Room					
+Sigma-Aldrich	Eppendorf	26/08/2017	I40850F	L360O_0007	Eppendorf Research plus Pipette 10-100ul	Pipette	Extraction Room	1	each	R3 576,00	R7 500	
+Sep Sci	Comp Digi	17/09/2015	FSKT24001	L360O_0008	Comp Digi MicroPlate Shaker Orbital 100-24OV	Shaker	Extraction Room	1	each	R14 067,00	R20 000	
+Sep Sci	Sturdy	21/01/2016	141116201-003	L360O_0009	Autoclave Sturdy Semi-Automatic 16L	Autoclave	Open Area	1	each	R21 000,00	R35 000	
+AEC Amersham	Mini G	16/09/2015	100030023	L360O_0010	Minifuge: Mini G Centrifuge	Minifuge	Extraction Room	1	each	R4 114,45	R5 000	
+Lasec	Lasec	04/09/2015	A4-2228	L360O_0011	Vortex: Digital Vortex-Genie 2 230V	Vortex	Extraction Room	1	each	R12 021,18	R18 000	
+LTC Thermo	Invitrogen	19/03/2015	2321601545	L360O_0012	QUBIT 3,0 Fluorometer	Fluorometer	Extraction Room	1	each	R40 000,00	R90 000	
+Sigma-Aldrich	Benchmark	26/11/2015	13091581	L360O_0013	Bench mixer	Mixer	Extraction Room	1	each	R3 365,20	R5 000	Out of service - Broken
+Selectech	Scientific	18/11/2015	0400019511295R00	L360O_0014	Scientific SE-295 Incubator Digital 40 Litre	Incubator	Extraction Room	1	each	R13 900,00	R40 000	
+Lasec	HeatBlock	01/09/2015	BSH5002-E	L360O_0015	HeatBlock: Myblock II Dry Bath Dig Quick Flip	Heating block	Extraction Room	1	each		R150 000	
+Sep Sci	Velp	19/11/2015	350756	L360O_0016	Vortex: MISC F202A0176 Velp 2x3 Vortex mixer	Vortex	Out of Use (Broken)	1	each	R1 868,00	R3 500	Out of service - Broken
+Sep Sci 	Velp	19/11/2015	350758	L360O_0017	Vortex: MISC F202A0176 Velp 2x3 Vortex mixer	Vortex	Out of Use (Broken)	1	each	R1 868,00	R3 500	Out of service - Broken
+Sigma-Aldrich	Myfuge	20/10/2015	20140902284	L360O_0018	Minifuge: Myfuge ™ mini centrifuge	Minifuge	Clean Room	1	each	R4 665,39	R5 000	
+Sigma-Aldrich	Myfuge	20/10/2015	20140902022	L360O_0019	Minifuge: Myfuge ™ mini centrifuge	Minifuge	Storage (Not in use)	1	each	R4 665,39	R5 000	Out of serive - Storage
+Labnet	Labnet	08/02/2016	K5081495	L360O_0020	Labnet Mps 1000 mini plate spinner centrifuge	Plate centrifuge	PCR Room	1	each	R6 500,00	R5 000	
+Davies Diagnositics	Omega Diagnostics	31/10/2019	CNS-INST-CNS350	L360O_0021	FoodPrint Microarray System	Elisa	Extraction Room	1	each	R160 000,00	R250 000	
+Sartorius	Tacta	05/11/2019	38282896	L360O_0022	Tacta Mechanical 1-channel pipette 0,5-10ul	Pipette	Extraction Room	1	Set	R9 142,80	R15 000	
+Sartorius	Tacta		38281815	L360O_0023	Tacta Mechanical 1-channel pipette 10-100ul	Pipette	Extraction Room				
+Sartorius	Tacta		38188201	L360O_0024	Tacta Mechanical 1-channel pipette 100-1000ul	Pipette	Extraction Room				
+Sartorius	Tacta	05/11/2019	LH-729140 (SN: 38285506)	L360O_0025	Tacta Machanical Pipette 8 Channel	Pipette	Extraction Room	1	each	R10 090,90	R20 000	
+LTC Tech	Applied Biosystems	12/12/2015	2990228051	L360O_0026	Applied BiosystemsVeriti 96w Thermal Cycler	Thermocycler	PCR Room	1	each	R87 674,00	R100 000	
+LTC Tech	Applied Biosystems	26/08/2015	230820439	L360O_0027	OPENARRAY ACCUFILL SYSTEM 	Accufill	Instrument Room	1	each	R490 974,00	R600 000	
+LTC Tech	Applied Biosystems	26/08/2015	710-1295	L360O_0028	MagMax Express (MME 6 DW 100 TO 240V BAS)	Extractor	Extraction Room	1	each	R526 817,00	R1 000 000	Out of service - Broken
+LTC Tech	Applied Biosystems	26/08/2015	285880801	L360O_0029	QUANTSTUDIO 12KFLEX-OPEN ARRAY + FAST 96-WELL BLOCK UPGRADE FOR QUANTSTUDIO	Thermocycler	Instrument Room	1	each	R973 438,00	R1 500 000	
+
+Chassis	Corsair 4000D RGB Midi Computer Toower (To use with LTC Tech Quantstudio)	11/05/2023		L360O_0030	Corsair Midi Computer Tower	Computer Box	Instrument Room	1	each	R29 850,00	R35 000	
+Takealot		2025/09/04		L360O_0031	1 TB External HardDrive	Hard drive	Office	1	each	R1 100,00	R1 500	
+Tshwane Electronic Waste company	Intelligene computing	28/05/2025	INT0005453K	L360O_106	1 TB External HardDrive	Hard Drive	Instrument Room	1	each	R600,00	R1 200	
+AEC Amersham	Finnipipette	26/08/2015	MH17842	L360O_0032	Finnipipette 1-10ul	Pipette	PCR Room	1	each	R12 500,00	R15 000	
+AEC Amersham	Finnipipette	26/08/2015	MH17836	L360O_0033	Finnipipette 10-100ul	Pipette	PCR Room	1	each	R12 500,00	R15 000	
+AEC Amersham	Finnipipette	26/08/2015	MH7848	L360O_0034	Finnipipette 100-1000ul	Pipette	PCR Room	1	each	R12 500,00	R15 000	
+Labotec	Integra	14/12/2015	7044863	L360O_0035	Integra 300ul 8 Channel	Pipette	PCR Room		each	R34 105,00	70000	
+Labotec	Integra	14/12/2015	1024154	L360O_0036	Integra 12,5ul 12 Channel	Pipette	Decommisioned (Out of use)	1	each	R36 328,00	70000	
+Labotec	Integra	14/12/2015	6004156	L360O_0037	Integra 50ul 12 Channel	Pipette	Decommisioned (Out of use)	1	each	R18 595,00	24000	
+Labotec	Integra	12/08/2015	6003811	L360O_0038	Integra 12,5ul single channel	Pipette	Clean Room	1	each	R8 376,00	12000	
+Sigma-Aldrich	Sartorius	02/02/2016	15023860	L360O_0039	Sartorius 10ul eline 8 channel	Pipette	Decommissioned 	1	each	R4 500,00	8000	
+Labotec	Integra	12/08/2015	4210	L360O_0040	Single Pipette Charging stand	Pipette	Clean room	1	each	R2 952,00	4000	
+Labotec	Viaflow	12/08/2015	5617N	L360O_0041	Viaflo Power Supply	Power supple	PCR Room	1	each	R964,00	1500	
+LTC Tech (ThermoFischer)	Finnipipette	19/09/2019	PH91701	L360O_0042	Finnpipette Stepper	Pipette	Extraction Room	1	each	R5 577,80	8000	
+LTC Tech (ThermoFischer)	E-Clip	25/09/2019	QH27698	L360O_0043	E1 Cliptip Electronic Pipette	Pipette	PCR Room	1	each	R30 084,90	65000	
+VIVID AIR	VIVID AIR	20/05/2020	03266974	L360O_0045	Biological Safety Cabinet Class II - VA-2000	BSC II	Extraction room	1	each	R114 100,00	130000	
+Mac-Afric	Mac-Afric	20/07/2020		L360O_0046	JDP 10000E 7KW Gasoline Generator		Storage	1	each	R11 456,62	R15 000	
+SepSci	Thermo Scientific	44574	780390444443265	L360O_0048	Thermo ES Lab Fridge/Freezer- Thermo 263c-AEV-TSC	Fridge/Freezer	Clean Room	1	each	R46 077,43	R70 000	
+SamsungA52:O61E74A52:N61A52:Q61A52A52:P74	SamsungA52:O61E74A52:N61A52:Q61A52A52:P74	12/8/2015	06Y5B8KGB002ZF	L360O_0049	Printer: Xpress C460FW	Printer	Open Area	1	each	R8 000,00	R12 000	
+LTC Thermo	Thermo Scientific	12/8/2015	Time0001	L360O_0050	Timer	Timer	Decommissioned 	1	each	R250,00	R150	
+LTC Thermo	Thermo Scientific	12/8/2015	Time0002	L360O_0051	Timer	Timer	Decommissioned 	1	each	R250,00	R150	
+LTC Thermo	Thermo Scientific	12/8/2015	Time0003	L360O_0052	Timer	Timer	Extraction Room	1	each	R250,00	R150	
+LTC Thermo	Thermo Scientific	19/10/2018	Time0004	L360O_0053	Timer	Timer	Extraction Room	1	each	R250,00	R150	
+Labotec	Labotec	24/01/2018	Time0005	L360O_0054	Timer	Timer	Instrument Room	1	each	R180,00	R150	
+Lasec	Lasec	22/11/2018	Thermo0001	L360O_0055	Digital Thermometer	Thermometer	Extraction Room	1	each	R350,00	R520,00	
+Esco	Esco	15/06/2023	2022-180269	L360O_0056	PCR Hood	Hood	Clean Room	1	each	R69 650,00	R80 000,00	
+Whitehead Scientific	EINS-SCI	17/04/2024	LN2442AT0002558	L360O_0057	E-C5-6.1 5CP Low Speed Centrifuge (Clinical centrifuge)	Centrifuge	Extraction Room	1	each	R6 381,15	R8 000,00	
+Whitehead Scientific	EINS-SCI	17/04/2024	SNVC231AK0001225	L360O_0058	E-OMM-A-Microplate Mixer (001)	Mixer	PCR Room	1	each	R6 428,68	R8 000,00	
+Whitehead Scientific	EINS-SCI	17/04/2024	VB23ABA0001241	L360O_0059	E-VM-Adjustable Vortex Mixer (001)	Vortex	Clean room	1	each	R3 422,55	R4 000,00	
+Whitehead Scientific	EINS-SCI	17/04/2024	B23ABA0001258	L360O_0060	E-VM-Adjustable Vortex Mixer (003)	Vortex	Detection room	1	each	R3 422,55	R4 000,00	
+Whitehead Scientific	EINS-SCI	17/04/2024	VB23ABA0001246	L360O_0061	E-VM-Adjustable Vortex Mixer (002)	Vortex	PCR Room	1	each	R3 422,55	R4 000,00	
+Whitehead Scientific	EINS-SCI	17/04/2024	HB23ABE0013205	L360O_0062	E-C7-Nano Mini Centrifuge (002)	Minifuge	Detection room	1	each	R2 928,39	R3 500,00	
+Whitehead Scientific	EINS-SCI	24-Jun	HB23ABE0013210	L360O_0063	E-C7-Nano Mini Centrifuge (003)	Minifuge	PCR Room	1	each	R2 928,39	R3 500,00	
+Whitehead Scientific	Optipipette	24-Jun	D51460008	L360O_0064	Multichannel 5-50 ul Pipette	Pipette	PCR Room	1	each	R9 169,58	R9 169,58	
+Whitehead Scientific	Optipipette	24-Jun	E51450001	L360O_0065	Multichannel 0.5-10 ul Pipette	Pipette	Clean room	1	each	R9 169,58	R9 169,58	
+
+

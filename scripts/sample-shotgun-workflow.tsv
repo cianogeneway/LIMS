@@ -1,0 +1,36 @@
+Well	Num	Sample ID	Barcode ID	Sample Type	Test Requested	Qubit [ng/uL]	Normalizing Diluent	Normalizing (DNA)	Comments	Pass / Fail	Gig data
+A01	1			Stool	Gut Microbiome		#DIV/0!	#DIV/0!		
+A02	2			Stool	Gut Microbiome		#DIV/0!	#DIV/0!		
+A03	3			Stool	Gut Microbiome		#DIV/0!	#DIV/0!		
+A04	4			Stool	Gut Microbiome		#DIV/0!	#DIV/0!		
+A05	5			Stool	Gut Microbiome		#DIV/0!	#DIV/0!		
+A06	6			Stool	Gut Microbiome		#DIV/0!	#DIV/0!		
+A07	7			Stool	Gut Microbiome		#DIV/0!	#DIV/0!		
+A08	8			Stool	Gut Microbiome		#DIV/0!	#DIV/0!		
+A09	9			Stool	Gut Microbiome		#DIV/0!	#DIV/0!		
+A10	10			Stool	Gut Microbiome		#DIV/0!	#DIV/0!		
+A11	11			Stool	Gut Microbiome		#DIV/0!	#DIV/0!		
+A12	12			Stool	Gut Microbiome		#DIV/0!	#DIV/0!		
+B01	13			Stool	Gut Microbiome		#DIV/0!	#DIV/0!		
+B02	14			Stool	Gut Microbiome		#DIV/0!	#DIV/0!		
+B03	15			Stool	Gut Microbiome		#DIV/0!	#DIV/0!		
+B04	16			Stool	Gut Microbiome		#DIV/0!	#DIV/0!		
+B05	17			Stool	Gut Microbiome		#DIV/0!	#DIV/0!		
+B06	18			Stool	Gut Microbiome		#DIV/0!	#DIV/0!		
+B07	19			Stool	Gut Microbiome		#DIV/0!	#DIV/0!		
+B08	20			Stool	Gut Microbiome		#DIV/0!	#DIV/0!		
+B09	21			Stool	Gut Microbiome		#DIV/0!	#DIV/0!		
+B10	22			Stool	Gut Microbiome		#DIV/0!	#DIV/0!		
+B11	23			Stool	Gut Microbiome		#DIV/0!	#DIV/0!		
+B12	24			Stool	Gut Microbiome		#DIV/0!	#DIV/0!		
+
+# Footer fields (kept as additional lines, importer will ignore extra rows if implemented defensively)
+End-prep Master Mix	n
+FFPE Buffer	#VALUE!
+Ultra II Buffer	#VALUE!
+Ultra II Enzyme	#VALUE!
+FFPE Mix	#VALUE!
+QC1 (ng/ul):
+QC2 (ng/ul):
+Final Library Volume	#DIV/0!
+Alliquot 8 ul Normalized DNA with 3 dH2O	name is Shotgun workflow

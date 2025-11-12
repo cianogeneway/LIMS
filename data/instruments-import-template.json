@@ -1,0 +1,24 @@
+[
+  {
+    "supplier": "AEC Amersham",
+    "manufacturer": "Thermo Scientific",
+    "invoiceDate": "2015-08-26",
+    "invoiceNumber": "INV-12345",
+    "serialNumber": "72211501612",
+    "productDescription": "Eppendorf Research Plus Pipette",
+    "shortDescription": "Pipette",
+    "areaOfUse": "Extraction Room",
+    "productCode": "PROD-001",
+    "unitPrice2016_2018": 1500.00,
+    "unitPrice2019": 1600.00,
+    "unitPrice2023": 1800.00,
+    "insuranceReplacementValue": 2000.00,
+    "maintenanceType": "Annual Service",
+    "serviceDueDate": "2024-12-31",
+    "unitMeasurement": "1 each",
+    "serviceDate": "2023-12-31",
+    "calibrationDate": "2023-12-31"
+  }
+]
+
+
