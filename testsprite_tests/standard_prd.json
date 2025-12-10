@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "project": "DNA Extraction WorkList System",
+    "date": "2025-11-19",
+    "prepared_by": "Software Development Manager"
+  },
+  "product_overview": "The DNA Extraction WorkList System is a fully integrated module within a Laboratory Information Management System (LIMS) that allows laboratory technicians to create, manage, and track DNA extraction worklists in a standardized 32-sample well format. It supports detailed sample data entry, quality control result tracking, and status monitoring through an intuitive UI and robust backend APIs.",
+  "core_goals": [
+    "Allow users to create DNA extraction worklists supporting exactly 32 sample wells each.",
+    "Enable comprehensive entry and editing of sample metadata and DNA quality control measurements.",
+    "Provide robust pagination, real-time search and filtering of worklists by key attributes.",
+    "Ensure data integrity and security through authenticated RESTful API endpoints with cascading deletes.",
+    "Facilitate efficient batch updates to sample rows and full audit trails for traceability.",
+    "Integrate seamlessly with existing LIMS navigation and UI components for cohesive user experience."
+  ],
+  "key_features": [
+    "Fully normalized PostgreSQL schema comprising ExtractionWorklists, ExtractionWorklistRows (32 wells), and ExtractionQCResults tables with indexes for performance.",
+    "RESTful API endpoints to create, read, update, delete, list, and paginate DNA extraction worklists with session authentication.",
+    "Client-side rendered frontend with a worklist listing page including search, pagination, and status badges.",
+    "A multi-section creation form capturing metadata, kit, and reagent configuration with validation.",
+    "Detail page featuring a tabbed interface for metadata and a scrollable editable 32-sample grid supporting real-time change tracking and batch saving.",
+    "Audit trails capturing created/updated timestamps and user information for all worklists and sample rows.",
+    "Status tracking of worklists (DRAFT, IN_PROGRESS, COMPLETED) with color-coded badges.",
+    "Responsiveness optimized for desktop and tablet devices, with desktop recommended for wide data grids.",
+    "Integrated navigation menu item with DNA molecule icon placed between Worklists and Instruments sections.",
+    "Robust error handling and user notifications throughout the application."
+  ],
+  "user_flow_summary": [
+    "User logs into the system via authenticated NextAuth credentials and accesses the LIMS dashboard.",
+    "User navigates to the 'DNA Extraction' section via the sidebar menu.",
+    "User views the list of existing DNA extraction worklists with pagination and applies search filters by name, kit lot, or technician.",
+    "User clicks 'New Worklist' button, fills out the metadata and kit configuration form, and submits to create a new worklist.",
+    "System automatically generates 32 sample row entries linked to the new worklist and redirects user to the detail page.",
+    "On the detail page, user switches between Metadata and 32-Sample Grid tabs to view/edit header info and sample measurements respectively.",
+    "User edits sample data inline within the grid for any of the 32 wells; changes are tracked in real-time.",
+    "User saves all changes in batch via the Save button, triggering API updates and confirmation messages.",
+    "User can delete a worklist from the list page after confirmation, causing cascading deletes of associated data.",
+    "Throughout usage, users receive loading indicators and error messages for system feedback."
+  ],
+  "validation_criteria": [
+    "All API endpoints require authenticated sessions and validate query and payload data correctly.",
+    "Creating a worklist automatically generates exactly 32 blank sample rows tied to the worklist ID.",
+    "The list API paginates data with page size of 10 and filters by searchable fields (name, kit lot, performer).",
+    "The detailed worklist API returns full related data, including all 32 sample rows and QC results.",
+    "The UI correctly renders worklist statuses with color-coded badges and supports real-time search filtering and pagination.",
+    "The create form validates required fields and disallows invalid data entry.",
+    "The 32-sample grid accurately displays all fields per sample and only enables save action when edits exist.",
+    "Batch update requests correctly update header metadata and all modified sample rows atomically.",
+    "Deleting a worklist removes all associated rows and QC results from the database.",
+    "Audit fields (CreatedAt, UpdatedAt, CreatedBy) are updated appropriately on all data mutations.",
+    "Application handles errors gracefully, displaying user-friendly messages and logging technical details.",
+    "Performance of queries is generally below 100ms for list and detail retrieval under typical load.",
+    "The UI maintains responsive layouts on desktop/tablet devices, with scrollable grids for wide tables.",
+    "Test scripts verify creation, update, deletion, and data integrity for worklists and rows.",
+    "Build passes TypeScript compilation, linting, and route registration with no errors."
+  ],
+  "code_summary": {
+    "tech_stack": [
+      "TypeScript",
+      "Next.js 14",
+      "React 18",
+      "PostgreSQL",
+      "NextAuth.js",
+      "Tailwind CSS",
+      "Radix UI"
+    ],
+    "features": [
+      {
+        "name": "Authentication",
+        "description": "User login with NextAuth using credentials provider with hardcoded admin and database fallback",
+        "files": [
+          "lib/auth.ts",
+          "app/api/auth/[...nextauth]/route.ts",
+          "app/login/page.tsx"
+        ]
+      },
+      {
+        "name": "Dashboard",
+        "description": "Main dashboard with statistics, monthly stats, and TAT alerts",
+        "files": [
+          "app/dashboard/page.tsx",
+          "app/api/dashboard/stats/route.ts",
+          "app/api/dashboard/monthly-stats/route.ts",
+          "app/api/dashboard/tat-alerts/route.ts"
+        ]
+      },
+      {
+        "name": "Client Management",
+        "description": "CRUD operations for clients with pricing, VAT, and currency settings",
+        "files": [
+          "app/clients/page.tsx",
+          "app/api/clients/route.ts",
+          "app/api/clients/[id]/route.ts"
+        ]
+      },
+      {
+        "name": "Sample Management",
+        "description": "Manage samples with batch operations and client associations",
+        "files": [
+          "app/samples/page.tsx",
+          "app/api/samples/route.ts",
+          "app/api/samples/[id]/route.ts",
+          "app/api/samples/batch/route.ts"
+        ]
+      },
+      {
+        "name": "Workflow Management",
+        "description": "Hierarchical workflow categories including Extraction & QC, Open Array, HID, NGS, MicroArray, Blood Profiling with nested subcategories and filtering",
+        "files": [
+          "app/extraction-worklists/page.tsx",
+          "app/extraction-worklists/[id]/page.tsx",
+          "app/extraction-worklists/new/page.tsx",
+          "app/api/extraction-worklists/route.ts",
+          "app/api/extraction-worklists/[id]/route.ts",
+          "components/layout/sidebar.tsx"
+        ]
+      },
+      {
+        "name": "Instrument Management",
+        "description": "Track instruments with maintenance logs and service reminders",
+        "files": [
+          "app/instruments/page.tsx",
+          "app/api/instruments/route.ts",
+          "app/api/instruments/[id]/route.ts",
+          "app/api/instruments/service-reminders/route.ts"
+        ]
+      },
+      {
+        "name": "Stock Management",
+        "description": "Inventory tracking with stock batches and supplier associations",
+        "files": [
+          "app/stock/page.tsx",
+          "app/api/stock/route.ts",
+          "app/api/stock/[id]/route.ts",
+          "app/api/stock/batches/route.ts"
+        ]
+      },
+      {
+        "name": "Supplier Management",
+        "description": "Manage suppliers with import functionality",
+        "files": [
+          "app/suppliers/page.tsx",
+          "app/api/suppliers/route.ts",
+          "app/api/suppliers/[id]/route.ts",
+          "app/api/suppliers/import/route.ts"
+        ]
+      },
+      {
+        "name": "Invoice Management",
+        "description": "Generate and manage invoices",
+        "files": [
+          "app/invoices/page.tsx",
+          "app/api/invoices/route.ts",
+          "app/api/invoices/[id]/route.ts",
+          "app/api/invoices/generate/route.ts"
+        ]
+      },
+      {
+        "name": "Purchase Orders",
+        "description": "Create and track purchase orders",
+        "files": [
+          "app/purchase-orders/page.tsx",
+          "app/api/purchase-orders/route.ts",
+          "app/api/purchase-orders/[id]/route.ts"
+        ]
+      },
+      {
+        "name": "Reports",
+        "description": "Upload and manage laboratory reports with file storage",
+        "files": [
+          "app/reports/page.tsx",
+          "app/api/reports/route.ts"
+        ]
+      },
+      {
+        "name": "QC Reports",
+        "description": "Quality control reports with PASSED/FAILED status tracking and statistics dashboard",
+        "files": [
+          "app/qc-reports/page.tsx",
+          "app/api/qc-reports/route.ts"
+        ]
+      },
+      {
+        "name": "SOP Management",
+        "description": "Manage Standard Operating Procedures documents",
+        "files": [
+          "app/sops/page.tsx",
+          "app/api/sops/route.ts",
+          "app/api/sops/[id]/route.ts"
+        ]
+      },
+      {
+        "name": "User Management",
+        "description": "Manage system users and permissions",
+        "files": [
+          "app/users/page.tsx",
+          "app/api/users/route.ts",
+          "app/api/users/[id]/route.ts"
+        ]
+      },
+      {
+        "name": "Navigation",
+        "description": "Main layout with sidebar navigation including expandable workflow categories",
+        "files": [
+          "components/layout/main-layout.tsx",
+          "components/layout/sidebar.tsx",
+          "components/layout/header.tsx"
+        ]
+      },
+      {
+        "name": "UI Components",
+        "description": "Reusable UI components built with Radix UI",
+        "files": [
+          "components/ui/button.tsx",
+          "components/ui/card.tsx",
+          "components/ui/input.tsx",
+          "components/ui/label.tsx",
+          "components/ui/select.tsx",
+          "components/ui/pagination.tsx"
+        ]
+      }
+    ]
+  }
+}

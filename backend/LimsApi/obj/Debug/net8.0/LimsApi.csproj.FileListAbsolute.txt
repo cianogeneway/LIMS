@@ -156,3 +156,4 @@ C:\Users\ciano.UMED\Documents\LIMS\backend\LimsApi\obj\Debug\net8.0\refint\LimsA
 C:\Users\ciano.UMED\Documents\LIMS\backend\LimsApi\obj\Debug\net8.0\LimsApi.pdb
 C:\Users\ciano.UMED\Documents\LIMS\backend\LimsApi\obj\Debug\net8.0\LimsApi.genruntimeconfig.cache
 C:\Users\ciano.UMED\Documents\LIMS\backend\LimsApi\obj\Debug\net8.0\ref\LimsApi.dll
+C:\Users\ciano.UMED\Documents\LIMS\backend\LimsApi\obj\Debug\net8.0\LimsApi.sourcelink.json

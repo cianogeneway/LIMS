@@ -27,6 +27,7 @@ export default function WorklistsPage() {
   const [total, setTotal] = useState(0)
   const [loading, setLoading] = useState(true)
   const [searchQuery, setSearchQuery] = useState(searchParams.get('q') || '')
+  const [category, setCategory] = useState(searchParams.get('category') || '')
   const [page, setPage] = useState(parseInt(searchParams.get('page') || '1'))
   const [deleting, setDeleting] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -34,10 +35,12 @@ export default function WorklistsPage() {
   const pageSize = 10
 
   useEffect(() => {
-    fetchWorklists(page, searchQuery)
-  }, [page, searchQuery])
+    const urlCategory = searchParams.get('category') || ''
+    setCategory(urlCategory)
+    fetchWorklists(page, searchQuery, urlCategory)
+  }, [page, searchQuery, searchParams])
 
-  async function fetchWorklists(currentPage: number, query: string) {
+  async function fetchWorklists(currentPage: number, query: string, categoryFilter: string = '') {
     try {
       setLoading(true)
       setError(null)
@@ -45,6 +48,7 @@ export default function WorklistsPage() {
         page: currentPage.toString(),
         pageSize: pageSize.toString(),
         ...(query && { q: query }),
+        ...(categoryFilter && { category: categoryFilter }),
       })
 
       const response = await fetch(`/api/extraction-worklists?${params}`)

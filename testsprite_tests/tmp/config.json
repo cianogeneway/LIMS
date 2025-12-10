@@ -1,0 +1,16 @@
+{
+  "status": "commited",
+  "type": "frontend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:3000/login",
+  "executionArgs": {
+    "projectName": "lims-system",
+    "projectPath": "c:\\Users\\ciano.UMED\\Documents\\LIMS",
+    "testIds": [],
+    "additionalInstruction": "",
+    "envs": {
+      "API_KEY": "sk-user-Y1ySZBTL3q0yIr1tip5kyfnwAYuYpW0MmGTA3dY6gTKMXaiD4jGJ0XUxpQm5uZWFdNtskJJkhdZZp3p1pYvb4pPg-mWTqevzcrDww9udZYiTXj1RWxyAVxsM3_hKsXcORas"
+    }
+  },
+  "proxy": "http://724345e2-b04c-4ceb-8c79-21565f74037b:2P1R4kyaQoXPnPmxVUlmsEtsaypYTK45@tun.testsprite.com:8080"
+}

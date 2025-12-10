@@ -25,9 +25,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env*.local
 .env
-.env.local
+.env*.local
 
 # vercel
 .vercel
@@ -36,5 +35,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# prisma
-/prisma/migrations
+# backend
+backend/LimsApi/bin/
+backend/LimsApi/obj/
+backend/QueryUsers/bin/
+backend/QueryUsers/obj/
+backend/DataImporter/bin/
+backend/DataImporter/obj/

@@ -36,41 +36,62 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
+          console.log('Missing credentials')
           return null
         }
 
-        // Query user from database
-        const client = await pool.connect()
-        try {
-          const result = await client.query(
-            'SELECT "Id", "Email", "Password", "Name", "Role" FROM "Users" WHERE "Email" = $1',
-            [credentials.email]
-          )
+        console.log('Login attempt:', credentials.email)
 
-          if (result.rows.length === 0) {
-            return null
-          }
-
-          const user = result.rows[0]
-          
-          // Verify password
-          const passwordMatch = await bcrypt.compare(credentials.password, user.Password)
-          
-          if (!passwordMatch) {
-            return null
-          }
-
+        // Hardcoded login for demo - bypass database
+        if (credentials.email === 'admin@life360omics.com' && credentials.password === 'Admin123!') {
+          console.log('Hardcoded login successful')
           return {
-            id: user.Id,
-            email: user.Email,
-            name: user.Name,
-            role: user.Role,
+            id: '1',
+            email: 'admin@life360omics.com',
+            name: 'Admin User',
+            role: 'ADMIN',
+          }
+        }
+
+        console.log('Hardcoded login failed, trying database')
+
+        // Fallback to database authentication
+        try {
+          const client = await pool.connect()
+          try {
+            const result = await client.query(
+              'SELECT "Id", "Email", "Password", "Name", "Role" FROM "Users" WHERE "Email" = $1',
+              [credentials.email]
+            )
+
+            if (result.rows.length === 0) {
+              console.log('User not found in database')
+              return null
+            }
+
+            const user = result.rows[0]
+            
+            // Verify password
+            const passwordMatch = await bcrypt.compare(credentials.password, user.Password)
+            
+            if (!passwordMatch) {
+              console.log('Password mismatch')
+              return null
+            }
+
+            console.log('Database login successful')
+            return {
+              id: user.Id,
+              email: user.Email,
+              name: user.Name,
+              role: user.Role,
+            }
+          } finally {
+            client.release()
           }
         } catch (error) {
           console.error('Auth error:', error)
           return null
-        } finally {
-          client.release()
         }
       }
     })

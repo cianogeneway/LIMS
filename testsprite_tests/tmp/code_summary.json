@@ -1,0 +1,93 @@
+{
+  "tech_stack": [
+    "TypeScript",
+    "Next.js 14",
+    "React 18",
+    "PostgreSQL",
+    "NextAuth.js",
+    "Tailwind CSS",
+    "Radix UI"
+  ],
+  "features": [
+    {
+      "name": "Authentication",
+      "description": "User login with NextAuth using credentials provider with hardcoded admin and database fallback",
+      "files": ["lib/auth.ts", "app/api/auth/[...nextauth]/route.ts", "app/login/page.tsx"]
+    },
+    {
+      "name": "Dashboard",
+      "description": "Main dashboard with statistics, monthly stats, and TAT alerts",
+      "files": ["app/dashboard/page.tsx", "app/api/dashboard/stats/route.ts", "app/api/dashboard/monthly-stats/route.ts", "app/api/dashboard/tat-alerts/route.ts"]
+    },
+    {
+      "name": "Client Management",
+      "description": "CRUD operations for clients with pricing, VAT, and currency settings",
+      "files": ["app/clients/page.tsx", "app/api/clients/route.ts", "app/api/clients/[id]/route.ts"]
+    },
+    {
+      "name": "Sample Management",
+      "description": "Manage samples with batch operations and client associations",
+      "files": ["app/samples/page.tsx", "app/api/samples/route.ts", "app/api/samples/[id]/route.ts", "app/api/samples/batch/route.ts"]
+    },
+    {
+      "name": "Workflow Management",
+      "description": "Hierarchical workflow categories including Extraction & QC, Open Array, HID, NGS, MicroArray, Blood Profiling with nested subcategories and filtering",
+      "files": ["app/extraction-worklists/page.tsx", "app/extraction-worklists/[id]/page.tsx", "app/extraction-worklists/new/page.tsx", "app/api/extraction-worklists/route.ts", "app/api/extraction-worklists/[id]/route.ts", "components/layout/sidebar.tsx"]
+    },
+    {
+      "name": "Instrument Management",
+      "description": "Track instruments with maintenance logs and service reminders",
+      "files": ["app/instruments/page.tsx", "app/api/instruments/route.ts", "app/api/instruments/[id]/route.ts", "app/api/instruments/service-reminders/route.ts"]
+    },
+    {
+      "name": "Stock Management",
+      "description": "Inventory tracking with stock batches and supplier associations",
+      "files": ["app/stock/page.tsx", "app/api/stock/route.ts", "app/api/stock/[id]/route.ts", "app/api/stock/batches/route.ts"]
+    },
+    {
+      "name": "Supplier Management",
+      "description": "Manage suppliers with import functionality",
+      "files": ["app/suppliers/page.tsx", "app/api/suppliers/route.ts", "app/api/suppliers/[id]/route.ts", "app/api/suppliers/import/route.ts"]
+    },
+    {
+      "name": "Invoice Management",
+      "description": "Generate and manage invoices",
+      "files": ["app/invoices/page.tsx", "app/api/invoices/route.ts", "app/api/invoices/[id]/route.ts", "app/api/invoices/generate/route.ts"]
+    },
+    {
+      "name": "Purchase Orders",
+      "description": "Create and track purchase orders",
+      "files": ["app/purchase-orders/page.tsx", "app/api/purchase-orders/route.ts", "app/api/purchase-orders/[id]/route.ts"]
+    },
+    {
+      "name": "Reports",
+      "description": "Upload and manage laboratory reports with file storage",
+      "files": ["app/reports/page.tsx", "app/api/reports/route.ts"]
+    },
+    {
+      "name": "QC Reports",
+      "description": "Quality control reports with PASSED/FAILED status tracking and statistics dashboard",
+      "files": ["app/qc-reports/page.tsx", "app/api/qc-reports/route.ts"]
+    },
+    {
+      "name": "SOP Management",
+      "description": "Manage Standard Operating Procedures documents",
+      "files": ["app/sops/page.tsx", "app/api/sops/route.ts", "app/api/sops/[id]/route.ts"]
+    },
+    {
+      "name": "User Management",
+      "description": "Manage system users and permissions",
+      "files": ["app/users/page.tsx", "app/api/users/route.ts", "app/api/users/[id]/route.ts"]
+    },
+    {
+      "name": "Navigation",
+      "description": "Main layout with sidebar navigation including expandable workflow categories",
+      "files": ["components/layout/main-layout.tsx", "components/layout/sidebar.tsx", "components/layout/header.tsx"]
+    },
+    {
+      "name": "UI Components",
+      "description": "Reusable UI components built with Radix UI",
+      "files": ["components/ui/button.tsx", "components/ui/card.tsx", "components/ui/input.tsx", "components/ui/label.tsx", "components/ui/select.tsx", "components/ui/pagination.tsx"]
+    }
+  ]
+}

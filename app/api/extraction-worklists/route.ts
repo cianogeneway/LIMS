@@ -16,24 +16,41 @@ export async function GET(req: Request) {
     const page = Math.max(1, parseInt(url.searchParams.get('page') || '1'))
     const pageSize = Math.min(100, parseInt(url.searchParams.get('pageSize') || '10'))
     const q = url.searchParams.get('q') || ''
+    const category = url.searchParams.get('category') || ''
     const offset = (page - 1) * pageSize
+
+    console.log('Category filter:', category)
 
     const client = await pool.connect()
     try {
       let countQuery = `SELECT COUNT(*) as total FROM "ExtractionWorklists"`
       let dataQuery = `SELECT * FROM "ExtractionWorklists"`
       const params: any[] = []
+      const whereClauses: string[] = []
 
       if (q) {
-        const whereClause = `
-          WHERE "Name" ILIKE $${params.length + 1}
+        whereClauses.push(`(
+          "Name" ILIKE $${params.length + 1}
           OR "ExtractionKitLot" ILIKE $${params.length + 1}
           OR "PerformedBy" ILIKE $${params.length + 1}
-        `
-        countQuery += whereClause
-        dataQuery += whereClause
+        )`)
         params.push(`%${q}%`)
       }
+
+      if (category) {
+        whereClauses.push(`"Category" = $${params.length + 1}`)
+        params.push(category)
+      }
+
+      if (whereClauses.length > 0) {
+        const whereClause = ` WHERE ` + whereClauses.join(' AND ')
+        countQuery += whereClause
+        dataQuery += whereClause
+      }
+
+      console.log('Count Query:', countQuery)
+      console.log('Data Query:', dataQuery)
+      console.log('Params:', params)
 
       dataQuery += `
         ORDER BY "Date" DESC, "CreatedAt" DESC
@@ -41,10 +58,12 @@ export async function GET(req: Request) {
       `
       params.push(pageSize, offset)
 
-      const countResult = await client.query(
-        countQuery,
-        q ? [`%${q}%`] : []
-      )
+      // Build count params based on search and category filters
+      const countParams: any[] = []
+      if (q) countParams.push(`%${q}%`)
+      if (category) countParams.push(category)
+
+      const countResult = await client.query(countQuery, countParams)
       const total = parseInt(countResult.rows[0].total) || 0
 
       const result = await client.query(dataQuery, params)
@@ -53,6 +72,7 @@ export async function GET(req: Request) {
         id: row.Id,
         name: row.Name,
         worklistType: row.WorklistType,
+        category: row.Category,
         status: row.Status,
         date: row.Date,
         performedBy: row.PerformedBy,

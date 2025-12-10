@@ -1,0 +1,495 @@
+[
+  {
+    "id": "TC001",
+    "title": "Login success with valid credentials",
+    "description": "Verify that user can log in successfully with valid NextAuth credentials.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to login page."
+      },
+      {
+        "type": "action",
+        "description": "Enter valid username and password."
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form."
+      },
+      {
+        "type": "assertion",
+        "description": "User is authenticated and redirected to LIMS dashboard."
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "Login failure with invalid credentials",
+    "description": "Verify that login fails and user receives appropriate error message when invalid credentials are used.",
+    "category": "error handling",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to login page."
+      },
+      {
+        "type": "action",
+        "description": "Enter invalid username and/or password."
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form."
+      },
+      {
+        "type": "assertion",
+        "description": "User is not authenticated and an error message is displayed."
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "Create new DNA extraction worklist with valid data",
+    "description": "Verify that user can create a new DNA extraction worklist by filling all mandatory metadata and kit configuration fields and submitting the creation form.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in and navigate to DNA Extraction section."
+      },
+      {
+        "type": "action",
+        "description": "Click the 'New Worklist' button."
+      },
+      {
+        "type": "action",
+        "description": "Fill all required metadata and kit/reagent configuration fields with valid data."
+      },
+      {
+        "type": "action",
+        "description": "Submit the creation form."
+      },
+      {
+        "type": "assertion",
+        "description": "New worklist is created with exactly 32 blank sample rows automatically generated."
+      },
+      {
+        "type": "assertion",
+        "description": "User is redirected to the detail page of the newly created worklist."
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "Create worklist form validation",
+    "description": "Verify the creation form prevents submission when required fields are missing or invalid data is entered.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to 'New Worklist' form."
+      },
+      {
+        "type": "action",
+        "description": "Attempt to submit the form with missing required fields."
+      },
+      {
+        "type": "assertion",
+        "description": "Form validation errors are displayed and form submission is blocked."
+      },
+      {
+        "type": "action",
+        "description": "Enter invalid data types or formats for inputs (e.g. invalid dates or text in numeric fields)."
+      },
+      {
+        "type": "assertion",
+        "description": "Validation errors are shown for invalid inputs."
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "Worklist list pagination and search",
+    "description": "Verify that the worklist listing page supports pagination with page size of 10 and real-time search filtering by name, kit lot, and technician.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to DNA Extraction worklist list page."
+      },
+      {
+        "type": "assertion",
+        "description": "Initially displays up to 10 worklists per page."
+      },
+      {
+        "type": "action",
+        "description": "Use pagination controls to navigate between pages."
+      },
+      {
+        "type": "assertion",
+        "description": "Correct worklists load on each page."
+      },
+      {
+        "type": "action",
+        "description": "Enter search terms for name filter and observe filtered results."
+      },
+      {
+        "type": "action",
+        "description": "Repeat search with kit lot and technician filters separately and combined."
+      },
+      {
+        "type": "assertion",
+        "description": "Worklists are filtered accurately in real-time according to search criteria."
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "Worklist detail page data rendering",
+    "description": "Verify that the detail page correctly displays all metadata, 32 sample rows, and QC results with a tabbed interface.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open an existing DNA extraction worklist detail page."
+      },
+      {
+        "type": "assertion",
+        "description": "Metadata tab displays the worklist header information and kit/reagent configuration."
+      },
+      {
+        "type": "action",
+        "description": "Switch to 32-Sample Grid tab."
+      },
+      {
+        "type": "assertion",
+        "description": "All 32 sample rows are displayed in a scrollable, editable grid with correct data fields."
+      },
+      {
+        "type": "assertion",
+        "description": "QC result fields are visible and correctly associated with sample rows."
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "Inline editing and batch save of sample data",
+    "description": "Verify user can edit sample data inline in the 32-sample grid and save all changes in batch atomically.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to a worklist 32-Sample Grid tab."
+      },
+      {
+        "type": "action",
+        "description": "Edit multiple fields across several sample rows inline."
+      },
+      {
+        "type": "assertion",
+        "description": "UI tracks that unsaved changes exist and enables the 'Save' button."
+      },
+      {
+        "type": "action",
+        "description": "Click the 'Save' button to update all modified rows."
+      },
+      {
+        "type": "assertion",
+        "description": "Batch update API request succeeds and changes are persisted in the database."
+      },
+      {
+        "type": "assertion",
+        "description": "Audit fields for updated rows are modified to reflect update timestamps and user info."
+      },
+      {
+        "type": "assertion",
+        "description": "User is shown confirmation message upon successful save."
+      }
+    ]
+  },
+  {
+    "id": "TC008",
+    "title": "Prevent save button when no edits in sample grid",
+    "description": "Verify that the 'Save' button is disabled or hidden when no sample data edits have been made.",
+    "category": "ui",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open a worklist 32-Sample Grid tab with no edits."
+      },
+      {
+        "type": "assertion",
+        "description": "'Save' button is disabled or not clickable."
+      },
+      {
+        "type": "action",
+        "description": "Make an inline edit in any sample row."
+      },
+      {
+        "type": "assertion",
+        "description": "'Save' button becomes enabled or visible."
+      }
+    ]
+  },
+  {
+    "id": "TC009",
+    "title": "Worklist status tracking and badge display",
+    "description": "Verify that worklist status (DRAFT, IN_PROGRESS, COMPLETED) updates correctly and is displayed as color-coded badges in list and detail views.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Create a new worklist showing status as DRAFT."
+      },
+      {
+        "type": "action",
+        "description": "Update worklist progress to IN_PROGRESS and refresh views."
+      },
+      {
+        "type": "assertion",
+        "description": "Status badge updates to IN_PROGRESS with correct color."
+      },
+      {
+        "type": "action",
+        "description": "Mark worklist as COMPLETED and refresh views."
+      },
+      {
+        "type": "assertion",
+        "description": "Status badge updates to COMPLETED with correct color."
+      }
+    ]
+  },
+  {
+    "id": "TC010",
+    "title": "Delete a worklist and cascading delete verification",
+    "description": "Verify that deleting a worklist removes all associated sample rows and QC results from the database.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the DNA extraction worklist list page."
+      },
+      {
+        "type": "action",
+        "description": "Select an existing worklist and initiate delete action."
+      },
+      {
+        "type": "action",
+        "description": "Confirm the deletion."
+      },
+      {
+        "type": "assertion",
+        "description": "Worklist is removed from the list."
+      },
+      {
+        "type": "assertion",
+        "description": "Associated ExtractionWorklistRows and ExtractionQCResults are removed from database (verified via API or DB query)."
+      },
+      {
+        "type": "assertion",
+        "description": "User receives confirmation notification about deletion success."
+      }
+    ]
+  },
+  {
+    "id": "TC011",
+    "title": "API authentication enforcement",
+    "description": "Verify that all RESTful API endpoints reject requests without valid authenticated sessions.",
+    "category": "security",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Make API requests (GET, POST, PUT, DELETE) to worklist endpoints without authentication token."
+      },
+      {
+        "type": "assertion",
+        "description": "API responds with authentication error (e.g., 401 Unauthorized)."
+      },
+      {
+        "type": "action",
+        "description": "Make same API requests with valid authentication token."
+      },
+      {
+        "type": "assertion",
+        "description": "API responds with expected successful status."
+      }
+    ]
+  },
+  {
+    "id": "TC012",
+    "title": "Audit trail fields update on data mutations",
+    "description": "Verify that audit fields CreatedAt, UpdatedAt, and CreatedBy are correctly set/updated on creation and update of worklists and sample rows.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Create a new worklist via API or UI."
+      },
+      {
+        "type": "assertion",
+        "description": "CreatedAt, UpdatedAt timestamps are set and CreatedBy is set to the logged-in user's ID."
+      },
+      {
+        "type": "action",
+        "description": "Update the worklist metadata or sample rows."
+      },
+      {
+        "type": "assertion",
+        "description": "UpdatedAt is updated to the latest timestamp while CreatedAt remains unchanged."
+      },
+      {
+        "type": "assertion",
+        "description": "CreatedBy remains as original creator's user ID."
+      }
+    ]
+  },
+  {
+    "id": "TC013",
+    "title": "API payload validation and error handling",
+    "description": "Verify that all API endpoints validate incoming query parameters and request payloads, and reject invalid data with appropriate error responses.",
+    "category": "error handling",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Submit API requests with missing required fields in JSON payload."
+      },
+      {
+        "type": "assertion",
+        "description": "API responds with 400 Bad Request and validation error messages."
+      },
+      {
+        "type": "action",
+        "description": "Submit API requests with invalid types or formats for fields."
+      },
+      {
+        "type": "assertion",
+        "description": "API responds with clear error messages describing validation failures."
+      }
+    ]
+  },
+  {
+    "id": "TC014",
+    "title": "UI responsiveness on desktop and tablet devices",
+    "description": "Verify the UI layouts adapt correctly to desktop and tablet screen sizes, ensuring the wide 32-sample grid and form elements remain usable and scrollable as designed.",
+    "category": "ui",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Access the application on a desktop resolution screen."
+      },
+      {
+        "type": "assertion",
+        "description": "32-sample grid is fully visible with horizontal scrolling as needed."
+      },
+      {
+        "type": "action",
+        "description": "Access the application on a tablet resolution screen."
+      },
+      {
+        "type": "assertion",
+        "description": "UI components adapt with vertical scrolling; data grids remain functional and easy to navigate."
+      }
+    ]
+  },
+  {
+    "id": "TC015",
+    "title": "Performance of list and detail API endpoints",
+    "description": "Verify that typical usage queries for listing and retrieving extraction worklists complete in under 100ms.",
+    "category": "performance",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send list API requests for extraction worklists under normal load."
+      },
+      {
+        "type": "assertion",
+        "description": "API responses are returned within 100 milliseconds."
+      },
+      {
+        "type": "action",
+        "description": "Send detail API requests for a single extraction worklist including all 32 sample rows and QC results."
+      },
+      {
+        "type": "assertion",
+        "description": "API responses are returned within 100 milliseconds."
+      }
+    ]
+  },
+  {
+    "id": "TC016",
+    "title": "Navigation menu integration with DNA Extraction icon",
+    "description": "Verify the DNA Extraction navigation item is present between Worklists and Instruments sections with the correct molecule icon and navigates to the correct section.",
+    "category": "ui",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in and observe the sidebar navigation menu."
+      },
+      {
+        "type": "assertion",
+        "description": "DNA Extraction menu item is present between Worklists and Instruments."
+      },
+      {
+        "type": "assertion",
+        "description": "DNA molecule icon is displayed properly next to the item label."
+      },
+      {
+        "type": "action",
+        "description": "Click the DNA Extraction navigation item."
+      },
+      {
+        "type": "assertion",
+        "description": "User is navigated to the DNA Extraction worklist listing page."
+      }
+    ]
+  },
+  {
+    "id": "TC017",
+    "title": "Robust error handling and user notifications",
+    "description": "Verify the system displays user-friendly error messages and loading indicators throughout workflows, including API failures and validation errors.",
+    "category": "error handling",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Simulate API failure during worklist creation or update."
+      },
+      {
+        "type": "assertion",
+        "description": "User sees a clear error message describing the failure."
+      },
+      {
+        "type": "action",
+        "description": "Trigger validation errors on forms."
+      },
+      {
+        "type": "assertion",
+        "description": "Validation error messages appear inline with input fields."
+      },
+      {
+        "type": "action",
+        "description": "Observe loading spinners or progress indicators while data is being fetched or saved."
+      },
+      {
+        "type": "assertion",
+        "description": "Loading indicators are visible and disappear once operation completes."
+      }
+    ]
+  }
+]

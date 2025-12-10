@@ -69,6 +69,9 @@ export async function GET(req: Request) {
         contactNumber: row.ContactNumber,
         contactPerson: row.ContactPerson,
         sampleType: row.SampleType,
+        pricePerSample: parseFloat(row.PricePerSample) || 0,
+        vatApplicable: row.VatApplicable !== false,
+        currency: row.Currency || 'ZAR',
         createdAt: row.CreatedAt,
         updatedAt: row.UpdatedAt,
         _count: { samples: parseInt(row.sample_count) || 0 },
@@ -105,12 +108,15 @@ export async function POST(req: Request) {
         INSERT INTO "Clients" (
           "Id", "CompanyName", "OrganisationType", "VatRegistration", 
           "Address", "Email", "ContactNumber", "ContactPerson", 
-          "SampleType", "CreatedAt", "UpdatedAt"
-        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+          "SampleType", "PricePerSample", "VatApplicable", "Currency",
+          "CreatedAt", "UpdatedAt"
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)
       `, [
         id, data.companyName, data.organisationType, data.vatRegistration || null,
         data.address, data.email, data.contactNumber, data.contactPerson,
-        data.sampleType, now, now
+        data.sampleType, data.pricePerSample || 0, 
+        data.vatApplicable !== false, data.currency || 'ZAR',
+        now, now
       ])
       
       const newClient = {
