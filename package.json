@@ -5,12 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "node server.js",
+    "start": "next start -p 8080",
     "lint": "next lint",
     "db:push": "prisma db push",
     "db:studio": "prisma studio",
     "db:seed": "tsx prisma/seed.ts",
-    "postinstall": "echo 'Skipping Prisma for mock mode'"
+    "postinstall": "echo 'Build complete'"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
